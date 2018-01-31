@@ -20,6 +20,7 @@ class RouteTrackerViewController: UIViewController {
     @IBOutlet weak var routeStartButton: UIButton!
     @IBOutlet weak var closeButton: UIButton!
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
