@@ -16,6 +16,7 @@
 		26604B7B1EBB784300FBF828 /* PhotoSaveView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26604B7A1EBB784300FBF828 /* PhotoSaveView.xib */; };
 		26604B7D1EBB833D00FBF828 /* RunTrack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26604B7C1EBB833D00FBF828 /* RunTrack.swift */; };
 		26604B801EBB885800FBF828 /* CLLocationCoordinate2D+DMS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26604B7F1EBB885800FBF828 /* CLLocationCoordinate2D+DMS.swift */; };
+		F260BE6C2028BFDE003F915B /* SettingsSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F260BE6B2028BFDE003F915B /* SettingsSingleton.swift */; };
 		F2B49E5120225A64007A5094 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B49E5020225A64007A5094 /* MapViewController.swift */; };
 		F2B49E5320225AEE007A5094 /* RouteTrackerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B49E5220225AEE007A5094 /* RouteTrackerViewController.swift */; };
 /* End PBXBuildFile section */
@@ -32,6 +33,7 @@
 		26604B7A1EBB784300FBF828 /* PhotoSaveView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PhotoSaveView.xib; sourceTree = "<group>"; };
 		26604B7C1EBB833D00FBF828 /* RunTrack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RunTrack.swift; sourceTree = "<group>"; };
 		26604B7F1EBB885800FBF828 /* CLLocationCoordinate2D+DMS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CLLocationCoordinate2D+DMS.swift"; sourceTree = "<group>"; };
+		F260BE6B2028BFDE003F915B /* SettingsSingleton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsSingleton.swift; sourceTree = "<group>"; };
 		F2B49E5020225A64007A5094 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		F2B49E5220225AEE007A5094 /* RouteTrackerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouteTrackerViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -85,6 +87,7 @@
 				26604B781EBB783200FBF828 /* PhotoSaveView.swift */,
 				F2B49E5020225A64007A5094 /* MapViewController.swift */,
 				F2B49E5220225AEE007A5094 /* RouteTrackerViewController.swift */,
+				F260BE6B2028BFDE003F915B /* SettingsSingleton.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -155,7 +158,8 @@
 				TargetAttributes = {
 					26604B5A1EBB75E400FBF828 = {
 						CreatedOnToolsVersion = 8.3.2;
-						ProvisioningStyle = Manual;
+						DevelopmentTeam = FH445SE57B;
+						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Maps.iOS = {
 								enabled = 1;
@@ -206,6 +210,7 @@
 				26604B791EBB783200FBF828 /* PhotoSaveView.swift in Sources */,
 				26604B7D1EBB833D00FBF828 /* RunTrack.swift in Sources */,
 				F2B49E5120225A64007A5094 /* MapViewController.swift in Sources */,
+				F260BE6C2028BFDE003F915B /* SettingsSingleton.swift in Sources */,
 				26604B5F1EBB75E400FBF828 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -333,7 +338,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = FH445SE57B;
 				INFOPLIST_FILE = runtracker/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.nextu.runtracker;
@@ -348,7 +355,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = FH445SE57B;
 				INFOPLIST_FILE = runtracker/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.nextu.runtracker;

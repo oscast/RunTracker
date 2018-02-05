@@ -20,39 +20,32 @@ class RouteTrackerViewController: UIViewController {
     @IBOutlet weak var routeStartButton: UIButton!
     @IBOutlet weak var closeButton: UIButton!
     
+    lazy var settings = SettingsSingleton.instance
     
     override func viewDidLoad() {
         super.viewDidLoad()
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
     
     @IBAction func CloseAction(_ sender: UIButton) {
         
     }
     
     @IBAction func musicAction(_ sender: UIButton) {
-        
+       settings.isPlayingMusic = !settings.isPlayingMusic
     }
    
     @IBAction func routeRegisterAction(_ sender: UIButton) {
-        
+        settings.isRegisteringRoute = !settings.isRegisteringRoute
     }
     
     @IBAction func routeDrawAction(_ sender: UIButton) {
-        
+        settings.isDrawingRoute = !settings.isDrawingRoute
     }
     
     @IBAction func startAction(_ sender: UIButton) {
-        
+            settings.applicationStarted = true
+        self.dismiss(animated: true, completion: nil)
     }
 
 }
