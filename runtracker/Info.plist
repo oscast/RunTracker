@@ -2,6 +2,10 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Esta app necesita acceso a su album de fotos.</string>
+	<key>NSCameraUsageDescription</key>
+	<string>Esta app necesita usar su camara.</string>
 	<key>NSAppleMusicUsageDescription</key>
 	<string>Esta aplicacion necesita acceso a su musica.</string>
 	<key>NSBluetoothPeripheralUsageDescription</key>

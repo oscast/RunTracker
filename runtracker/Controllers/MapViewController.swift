@@ -19,6 +19,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     var carPin: MKAnnotationView!
     var currentAnnotation: MKPointAnnotation?
     var settings = SettingsSingleton.instance
+    var startTime = Date()
+    var endTime = Date()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,7 +29,6 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         mapView.delegate = self
         
         locationManager.requestWhenInUseAuthorization()
-        self.locationManager.startUpdatingLocation()
         settings.requestMediaLibraryPermission()
         
         mapView.showsUserLocation = true
@@ -36,6 +37,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         locationManager.distanceFilter = 10
         mapView.camera.altitude = 500
         mapView.showsCompass = false
+        self.locationManager.startUpdatingLocation()
         locationManager.startUpdatingHeading()
         
         //music
@@ -43,6 +45,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     
     override func viewWillAppear(_ animated: Bool) {
         if settings.applicationStarted {
+            startTime = Date()
+            points = [CLLocation]()
             if settings.isPlayingMusic {
                 settings.playMusic()
             }
@@ -92,10 +96,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     //added in video for compass
     
     func locationManager(_ manager: CLLocationManager, didUpdateHeading newHeading: CLHeading) {
-        
         let angle = CGFloat(Double.pi/180)*CGFloat(newHeading.trueHeading)
         mapView.camera.heading = 0
-        //   compassButton.transform = CGAffineTransform(rotationAngle: angle)
         carPin.transform = CGAffineTransform(rotationAngle: angle)
     }
     
@@ -115,11 +117,12 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     //IBACTIONS
     
     @IBAction func menuAction(_ sender: UIButton) {
+        let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
         if settings.applicationStarted {
+            let minutes = Date().minutes(from: startTime)
             locationManager.stopUpdatingLocation()
-            
+            settings.playerController.stop()
             var distance = 0.0
-            
             if points.count > 1 {
                 for i in 1...(points.count - 1) {
                     let previousPoint = points[i-1]
@@ -128,10 +131,26 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
                     distance += currentPoint.distance(from: previousPoint)
                 }
             }
-            
-           let distanceText = String(format: "Distancia: %.2fm", distance)
-
+           let distanceText = String(format: "Distancia: %.2f", distance)
+            print(distanceText)
+            let endTrack = mainStoryboard.instantiateViewController(withIdentifier: "endTrack") as! EndTrackViewController
+            endTrack.meters = "Recorriste \(distanceText) metros"
+            endTrack.minutes = "En \(minutes) minutos"
+            endTrack.startCoordinate = points.first?.coordinate
+            endTrack.endCoordinate = points.last?.coordinate
+            endTrack.metersInt = Int(distance)
+            endTrack.minutesInt = minutes
+            self.present(endTrack, animated: true, completion: nil)
+        } else {
+            let routeTracker = mainStoryboard.instantiateViewController(withIdentifier: "routeTracker")
+            self.present(routeTracker, animated: true, completion: nil)
         }
     }
     
+}
+
+extension Date {
+    func minutes(from date: Date) -> Int {
+        return Calendar.current.dateComponents([.minute], from: date, to: self).minute ?? 0
+    }
 }

@@ -17,6 +17,7 @@
 		26604B7D1EBB833D00FBF828 /* RunTrack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26604B7C1EBB833D00FBF828 /* RunTrack.swift */; };
 		26604B801EBB885800FBF828 /* CLLocationCoordinate2D+DMS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26604B7F1EBB885800FBF828 /* CLLocationCoordinate2D+DMS.swift */; };
 		F260BE6C2028BFDE003F915B /* SettingsSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F260BE6B2028BFDE003F915B /* SettingsSingleton.swift */; };
+		F2B18A7420292D70009DBD0B /* EndTrackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B18A7320292D70009DBD0B /* EndTrackViewController.swift */; };
 		F2B49E5120225A64007A5094 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B49E5020225A64007A5094 /* MapViewController.swift */; };
 		F2B49E5320225AEE007A5094 /* RouteTrackerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B49E5220225AEE007A5094 /* RouteTrackerViewController.swift */; };
 /* End PBXBuildFile section */
@@ -34,6 +35,7 @@
 		26604B7C1EBB833D00FBF828 /* RunTrack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RunTrack.swift; sourceTree = "<group>"; };
 		26604B7F1EBB885800FBF828 /* CLLocationCoordinate2D+DMS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CLLocationCoordinate2D+DMS.swift"; sourceTree = "<group>"; };
 		F260BE6B2028BFDE003F915B /* SettingsSingleton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsSingleton.swift; sourceTree = "<group>"; };
+		F2B18A7320292D70009DBD0B /* EndTrackViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndTrackViewController.swift; sourceTree = "<group>"; };
 		F2B49E5020225A64007A5094 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		F2B49E5220225AEE007A5094 /* RouteTrackerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouteTrackerViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -88,6 +90,7 @@
 				F2B49E5020225A64007A5094 /* MapViewController.swift */,
 				F2B49E5220225AEE007A5094 /* RouteTrackerViewController.swift */,
 				F260BE6B2028BFDE003F915B /* SettingsSingleton.swift */,
+				F2B18A7320292D70009DBD0B /* EndTrackViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -207,6 +210,7 @@
 			files = (
 				F2B49E5320225AEE007A5094 /* RouteTrackerViewController.swift in Sources */,
 				26604B801EBB885800FBF828 /* CLLocationCoordinate2D+DMS.swift in Sources */,
+				F2B18A7420292D70009DBD0B /* EndTrackViewController.swift in Sources */,
 				26604B791EBB783200FBF828 /* PhotoSaveView.swift in Sources */,
 				26604B7D1EBB833D00FBF828 /* RunTrack.swift in Sources */,
 				F2B49E5120225A64007A5094 /* MapViewController.swift in Sources */,
