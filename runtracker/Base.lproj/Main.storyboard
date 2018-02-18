@@ -49,6 +49,7 @@
                     <navigationItem key="navigationItem" id="p3P-X0-TJS"/>
                     <connections>
                         <outlet property="mapView" destination="CR8-pE-HLt" id="JXe-0T-M4w"/>
+                        <outlet property="menuButton" destination="wt4-sC-6Tk" id="g9g-x3-yq8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -68,7 +69,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Configura tu ruta" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Sx-CT-6xa">
-                                <rect key="frame" x="74.5" y="30" width="226.5" height="33.5"/>
+                                <rect key="frame" x="74" y="30" width="227" height="34"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -85,50 +86,50 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HCZ-4B-XlE">
-                                <rect key="frame" x="20" y="103.5" width="70" height="70"/>
+                                <rect key="frame" x="20" y="104" width="70" height="70"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="70" id="2pY-te-Bg9"/>
                                     <constraint firstAttribute="height" constant="70" id="A0h-jW-YE7"/>
                                 </constraints>
-                                <state key="normal" image="musica"/>
+                                <state key="normal" image="musica1"/>
                                 <connections>
                                     <action selector="musicAction:" destination="r8H-Ap-bXs" eventType="touchUpInside" id="8xw-RG-GNx"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Música apagada" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Es-cL-w2Y">
-                                <rect key="frame" x="98" y="128" width="125" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Música encendida" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Es-cL-w2Y">
+                                <rect key="frame" x="98" y="129" width="139" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VNy-lj-h0U">
-                                <rect key="frame" x="20" y="213.5" width="70" height="70"/>
-                                <state key="normal" image="recorrido"/>
+                                <rect key="frame" x="20" y="214" width="70" height="70"/>
+                                <state key="normal" image="recorrido1"/>
                                 <connections>
                                     <action selector="routeRegisterAction:" destination="r8H-Ap-bXs" eventType="touchUpInside" id="eFU-Ve-pH5"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No está registrando ruta" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OLr-D1-goR">
-                                <rect key="frame" x="98" y="238" width="186" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Está registrando ruta" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OLr-D1-goR">
+                                <rect key="frame" x="98" y="239" width="160" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zy9-Ou-K2Q">
-                                <rect key="frame" x="20" y="323.5" width="70" height="70"/>
-                                <state key="normal" image="recorrido"/>
+                                <rect key="frame" x="20" y="324" width="70" height="70"/>
+                                <state key="normal" image="pintar1"/>
                                 <connections>
                                     <action selector="routeDrawAction:" destination="r8H-Ap-bXs" eventType="touchUpInside" id="BlV-45-ajK"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No está dibujando ruta" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5y6-Pn-MGy">
-                                <rect key="frame" x="98" y="348" width="174" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Está dibujando ruta" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5y6-Pn-MGy">
+                                <rect key="frame" x="98" y="349" width="148" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rdl-IX-CfT">
-                                <rect key="frame" x="152.5" y="587" width="70" height="70"/>
+                                <rect key="frame" x="153" y="587" width="70" height="70"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="92T-vf-1CN"/>
                                     <constraint firstAttribute="width" constant="70" id="pU9-rk-rZn"/>
@@ -195,7 +196,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="¡FELICITACIONES!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fo7-qi-Hfd">
-                                <rect key="frame" x="67.5" y="30" width="240" height="34"/>
+                                <rect key="frame" x="68" y="30" width="240" height="34"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -221,7 +222,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="En X minutos" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i20-h6-5hQ">
-                                <rect key="frame" x="90" y="226.5" width="101" height="21"/>
+                                <rect key="frame" x="90" y="227" width="101" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -235,11 +236,12 @@
                                 <state key="normal" image="x"/>
                                 <connections>
                                     <action selector="CloseAction:" destination="r8H-Ap-bXs" eventType="touchUpInside" id="9yV-eE-PPu"/>
+                                    <action selector="closeAction:" destination="cjk-2E-rP8" eventType="touchUpInside" id="lsf-dU-c2c"/>
                                     <action selector="closeResults:" destination="cjk-2E-rP8" eventType="touchUpInside" id="bpV-ky-c5c"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9mO-0f-xQ3">
-                                <rect key="frame" x="152.5" y="587" width="70" height="70"/>
+                                <rect key="frame" x="153" y="587" width="70" height="70"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="8Ta-6E-Y2y"/>
                                     <constraint firstAttribute="width" constant="70" id="9Jf-ZD-550"/>
@@ -285,8 +287,10 @@
         <image name="foto" width="62" height="61"/>
         <image name="inicio" width="62" height="62"/>
         <image name="menu" width="62" height="62"/>
-        <image name="musica" width="62" height="62"/>
+        <image name="musica1" width="62" height="62"/>
+        <image name="pintar1" width="62" height="62"/>
         <image name="recorrido" width="62" height="62"/>
+        <image name="recorrido1" width="62" height="62"/>
         <image name="tiempo" width="62" height="62"/>
         <image name="x" width="31" height="31"/>
     </resources>

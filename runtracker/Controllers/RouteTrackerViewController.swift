@@ -24,6 +24,9 @@ class RouteTrackerViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        musicButton.setImage(UIImage(named: settings.isPlayingMusic ? "musica1" : "musica"), for: .normal)
+        routeRegisterButton.setImage(UIImage(named: settings.isRegisteringRoute ? "recorrido1" : "recorrido"), for: .normal)
+        routeDrawButton.setImage(UIImage(named: settings.isRegisteringRoute ? "pintar1" : "pintar"), for: .normal)
     }
 
     
@@ -33,14 +36,17 @@ class RouteTrackerViewController: UIViewController {
     
     @IBAction func musicAction(_ sender: UIButton) {
        settings.isPlayingMusic = !settings.isPlayingMusic
+        musicButton.setImage(UIImage(named: settings.isPlayingMusic ? "musica1" : "musica"), for: .normal)
     }
    
     @IBAction func routeRegisterAction(_ sender: UIButton) {
         settings.isRegisteringRoute = !settings.isRegisteringRoute
+        routeRegisterButton.setImage(UIImage(named: settings.isRegisteringRoute ? "recorrido1" : "recorrido"), for: .normal)
     }
     
     @IBAction func routeDrawAction(_ sender: UIButton) {
         settings.isDrawingRoute = !settings.isDrawingRoute
+        routeDrawButton.setImage(UIImage(named: settings.isDrawingRoute ? "pintar1" : "pintar"), for: .normal)
     }
     
     @IBAction func startAction(_ sender: UIButton) {

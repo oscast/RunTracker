@@ -53,13 +53,14 @@ class EndTrackViewController: UIViewController, UINavigationControllerDelegate, 
                 self.present(self.imagePicker, animated: true, completion: nil)
                 break
             default:
-                // present(REAlertCenter.noMediaPermissionAlert(String.localize(key: "re.profile.cameraAlertTitle"), String.localize(key: "re.profile.cameraPermissionError")), animated: true, completion: nil)
+                let alert = UIAlertController(title: "Error", message: "Debe asignar permisos a la app para usar la camara para poder usarla", preferredStyle: .alert)
+                self.present(alert, animated: true, completion: nil)
                 break
             }
         } else {
-            //    present(REAlertCenter.showErrorMessage(String.localize(key: "re.profile.cameraDeviceError")), animated: true, completion: nil)
+            let alert = UIAlertController(title: "Error", message: "Hay un problema con su camara.", preferredStyle: .alert)
+            self.present(alert, animated: true, completion: nil)
         }
-        
     }
     
     public func configureCamera() {
@@ -75,21 +76,25 @@ class EndTrackViewController: UIViewController, UINavigationControllerDelegate, 
     //MARK: UIPickerControlleDelegate
     
     public func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        
-        let mediaType = info[UIImagePickerControllerMediaType] as! String
-        
-        if mediaType == kUTTypeImage as String {
-           if let imageTaken = info[UIImagePickerControllerOriginalImage] as? UIImage {
-                let runTrack = RunTrack(userPicture: imageTaken, metersTraveled: metersInt, minutesTraveled: minutesInt, startCoordinates: startCoordinate, endCoordinates: endCoordinate)
-            let nib = PhotoSaveView.loadFromNib()
-            nib.pictureImageView.image = PhotoSaveView.convertTrackingToImage(withTracking: runTrack)
-            //let editedImage = PhotoSaveView.convertTrackingToImage(withTracking: runTrack)
-            UIImageWriteToSavedPhotosAlbum(nib.pictureImageView.image!, nil, nil, nil)
-            }
+ 
+        //Solo Si no esta registrando la ruta, se guarda coordanadas 0
+        let start = CLLocationCoordinate2D(latitude: CLLocationDegrees(0), longitude: CLLocationDegrees(0))
+        let end = CLLocationCoordinate2D(latitude: CLLocationDegrees(0), longitude: CLLocationDegrees(0))
+        if startCoordinate == nil {
+            startCoordinate = start
+        }
+        if endCoordinate == nil {
+            endCoordinate = end
         }
         
-        
-        
+        let mediaType = info[UIImagePickerControllerMediaType] as! String
+        if mediaType == kUTTypeImage as String {
+           if let imageTaken = info[UIImagePickerControllerOriginalImage] as? UIImage {
+            let runTrack = RunTrack(userPicture: imageTaken, metersTraveled: metersInt, minutesTraveled: minutesInt, startCoordinates: startCoordinate, endCoordinates: endCoordinate)
+            let editedImage = PhotoSaveView.convertTrackingToImage(withTracking: runTrack)
+            UIImageWriteToSavedPhotosAlbum(editedImage, nil, nil, nil)
+            }
+        }
         picker.dismiss(animated: true, completion: nil)
     }
     
@@ -97,5 +102,7 @@ class EndTrackViewController: UIViewController, UINavigationControllerDelegate, 
         picker.dismiss(animated: true, completion: nil)
     }
     
-    
+    @IBAction func closeAction(_ sender: UIButton) {
+        dismiss(animated: true, completion: nil)
+    }
 }
